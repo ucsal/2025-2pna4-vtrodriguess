@@ -14,8 +14,15 @@ public class App {
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
             DrawingPanel panel = new DrawingPanel();
+            
+            JPanel botoes = new JPanel();
+            JButton salvarBtn = new JButton("Exportar PNG");
+            salvarBtn.addActionListener(e -> panel.exportarPNG("teste.png"));
+            botoes.add(salvarBtn);
 
+            
             frame.setLayout(new BorderLayout());
+            frame.add(botoes, BorderLayout.NORTH);
             frame.add(panel, BorderLayout.CENTER);
 
             frame.setSize(900, 600);
